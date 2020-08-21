@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">Home</router-link>
+            <router-link to="/">Home</router-link>&nbsp;|&nbsp;
             <router-link to="/about">About</router-link>
         </div>
         <transition :name="transitionName">
@@ -11,12 +11,13 @@
 </template>
 
 <script>
+    import { mapState } from "vuex"
     export default {
         name: 'app',
         computed: {
-            transitionName() {
-                return this.$store.state.direction
-            }
+            ...mapState({
+                'transitionName': state => state.direction
+            })
         }
     }
 </script>

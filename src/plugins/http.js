@@ -1,11 +1,8 @@
 import axios from 'axios'
 import router from '../router'
-import functions from './functions'
+// import functions from './functions'
 axios.defaults.timeout = 10000 // 设置超时10秒
-axios.defaults.headers['appid'] = '1006' // 子应用
-axios.defaults.headers['version'] = '2.0.0' // 版本号
-axios.defaults.headers['transid'] = '1006' + functions.format_date(new Date(), 'yyyyMMddhhmmss') + functions.rand(10000000, 99999999) // 请求序号
-const prefix = '/api'
+const prefix = ''
 
 // 请求拦截
 axios.interceptors.request.use(

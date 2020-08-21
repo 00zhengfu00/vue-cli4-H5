@@ -47,7 +47,7 @@ module.exports = {
         hotOnly: false,
         proxy: {
             "/": {
-                target: "https://easy-mock.com/",
+                target: "",
                 changeOrigin: true,
                 ws: false, // proxy websockets
                 pathRewrite: {
