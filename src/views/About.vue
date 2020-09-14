@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <h1>This is an aboutVuex page</h1>
+        <h1>This is an about Vuex and Axios page</h1>
         <p>{{ value }}</p>
     </div>
 </template>
@@ -23,9 +23,8 @@
         methods: {
             getValue(){
                 this.$axios.get('https://api.uomg.com/api/rand.qinghua').then(res => {
-                    if(res.code == 1){
-                        this.setValue(res.content)
-                    }
+                    if(res.code == 1) this.setValue(res.content)
+
                 })
             },
             ...mapActions({
