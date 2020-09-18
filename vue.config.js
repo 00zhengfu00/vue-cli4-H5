@@ -2,7 +2,8 @@ const path = require("path");
 const CompressionWebpackPlugin = require("compression-webpack-plugin"); // gzip压缩插件
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
     .BundleAnalyzerPlugin; //打包后模块大小分析
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin"); // UglifyJS Webpack Plugin插件用来缩小（压缩优化）js文件，至少需要Node v6.9.0和Webpack v4.0.0版本。
+// const UglifyJsPlugin = require("uglifyjs-webpack-plugin"); // UglifyJS Webpack Plugin插件用来缩小（压缩优化）js文件，至少需要Node v6.9.0和Webpack v4.0.0版本。
+const TerserPlugin = require('terser-webpack-plugin'); //替代uglifyjs-webpack-plugin打包优化
 const isProduction = process.env.NODE_ENV === "production"; // 环境判断
 
 // "@vue/prettier"  放在pagejson的eslintConfig.extends里面会生效eslint
@@ -64,21 +65,19 @@ module.exports = {
                 externals: externals
             });
             // 为生产环境修改配置...
-            // 上线压缩去除console等信息
             config.plugins.push(
-                new UglifyJsPlugin({
-                    uglifyOptions: {
-                        warnings: false,
+                new TerserPlugin({
+                    cache: true,
+                    parallel: true,
+                    sourceMap: false,
+                    terserOptions: {
                         compress: {
                             drop_console: true,
-                            drop_debugger: false,
-                            pure_funcs: ["console.log"] // 移除console
+                            drop_debugger: true
                         }
-                    },
-                    sourceMap: false,
-                    parallel: true
+                    }
                 })
-            );
+            )
             // 开启gzip压缩
             const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i;
             config.plugins.push(
