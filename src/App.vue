@@ -43,4 +43,9 @@
             }
         }
     }
+    .page {
+        min-width: 100vw;
+        min-height: 100vh;
+        background-color: #fff;
+    }
 </style>

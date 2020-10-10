@@ -10,27 +10,33 @@ const isProduction = process.env.NODE_ENV === "production"; // 环境判断
 
 // cdn预加载使用
 const externals = {
-    vue: "Vue",
+    "vue": "Vue",
     "vue-router": "VueRouter",
-    vuex: "Vuex",
-    axios: "axios"
+    "vuex": "Vuex",
+    "axios": "axios",
+    "vant": "vant"
 };
 
 // cdn资源
 const cdn = {
     // 开发环境
     dev: {
-        css: [],
+        css: [
+            "https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+        ],
         js: []
     },
     // 生产环境
     build: {
-        css: [],
+        css: [
+            "https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+        ],
         js: [
             "https://lib.baomitu.com/vue/2.6.6/vue.min.js",
             "https://lib.baomitu.com/vue-router/3.0.1/vue-router.min.js",
             "https://lib.baomitu.com/vuex/3.0.1/vuex.min.js",
-            "https://lib.baomitu.com/axios/0.18.0/axios.min.js"
+            "https://lib.baomitu.com/axios/0.18.0/axios.min.js",
+            "https://cdn.jsdelivr.net/npm/vant@2.10/lib/vant.min.js"
         ]
     }
 };

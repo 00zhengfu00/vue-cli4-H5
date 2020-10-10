@@ -2,6 +2,8 @@
 
 
 
+
+
 /* page change */
 $--transition-time: 350ms;
 .back-enter-active,
@@ -12,7 +14,8 @@ $--transition-time: 350ms;
   transition: all $--transition-time;
   position: absolute;
   height: 100%;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   perspective: 1000;
 }
 .back-enter {
@@ -47,10 +50,8 @@ $--transition-time: 350ms;
   transition: all $--transition-time;
 }
 .slide-left-enter, .slide-right-leave-active {
-  -webkit-transform: translate(100%, 0);
   transform: translate(100%, 0);
 }
 .slide-left-leave-active, .slide-right-enter {
-  -webkit-transform: translate(-100%, 0);
   transform: translate(-100%, 0);
 }

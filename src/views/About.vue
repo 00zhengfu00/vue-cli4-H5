@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="about page">
         <h1>This is an about Vuex and Axios page</h1>
         <p>{{ value }}</p>
     </div>

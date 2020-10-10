@@ -1,6 +1,7 @@
 <template>
     <div class="home">
         <baidu-map class="my-map" :center="center" :zoom="zoom" @ready="handler" ak="rIv2CMtCyMC5brlW2mmzw5SiKI1BkDAH"></baidu-map>
+        <van-button type="primary">1234</van-button>
     </div>
 </template>
 
