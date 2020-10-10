@@ -22,21 +22,21 @@ const cdn = {
     // 开发环境
     dev: {
         css: [
-            "https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+            "https://cdn.jsdelivr.net/npm/vant@2.10.9/lib/index.css"
         ],
         js: []
     },
     // 生产环境
     build: {
         css: [
-            "https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+            "https://cdn.jsdelivr.net/npm/vant@2.10.9/lib/index.css"
         ],
         js: [
-            "https://lib.baomitu.com/vue/2.6.6/vue.min.js",
-            "https://lib.baomitu.com/vue-router/3.0.1/vue-router.min.js",
-            "https://lib.baomitu.com/vuex/3.0.1/vuex.min.js",
-            "https://lib.baomitu.com/axios/0.18.0/axios.min.js",
-            "https://cdn.jsdelivr.net/npm/vant@2.10/lib/vant.min.js"
+            "https://lib.baomitu.com/vue/2.6.12/vue.min.js",
+            "https://cdn.jsdelivr.net/npm/vue-router@3.4.6/dist/vue-router.min.js",
+            "https://cdn.jsdelivr.net/npm/vuex@3.5.1/dist/vuex.min.js",
+            "https://cdn.jsdelivr.net/npm/axios@0.20.0/dist/axios.min.js",
+            "https://cdn.jsdelivr.net/npm/vant@2.10.9/lib/vant.min.js"
         ]
     }
 };
