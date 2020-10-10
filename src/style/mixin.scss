@@ -207,3 +207,25 @@
     }
   }
 }
+
+//calc兼容处理
+@mixin wcalc ($exp) {
+    width: -moz-$exp;
+    width: -webkit-$exp;
+    width: $exp;
+  }
+  @mixin hcalc ($exp) {
+    height: -moz-$exp;
+    height: -webkit-$exp;
+    height: $exp;
+  }
+  @mixin minWcalc ($exp) {
+    min-width: -moz-$exp;
+    min-width: -webkit-$exp;
+    min-width: $exp;
+  }
+  @mixin minHcalc ($exp) {
+    min-height: -moz-$exp;
+    min-height: -webkit-$exp;
+    min-height: $exp;
+  }
